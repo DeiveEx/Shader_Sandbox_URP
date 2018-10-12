@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: FillLiquid3
+  m_Shader: {fileID: 4800000, guid: b0d88cfd8b81e024f8c37291890066bb, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_9324F731:
+        m_Texture: {fileID: 2800000, guid: 5fa3c0379f569b1469a1f7b8f97373ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_62715FAA: 0.2
+    - Vector1_6646B23C: 0.2
+    - Vector1_7031AD3F: 1
+    - Vector1_ABE13DC7: 0.02
+    m_Colors:
+    - Color_3E7363BE: {r: 1, g: 0.3456931, b: 0, a: 0}
+    - Color_48EEA0CB: {r: 1, g: 0.9122155, b: 0.7764706, a: 0}
+    - Color_6746BF5: {r: 1, g: 0.7996218, b: 0.33333337, a: 0}
+    - Color_C4BAF1B1: {r: 1, g: 0.65705234, b: 0, a: 0}

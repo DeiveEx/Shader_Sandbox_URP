@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: graphs_BuildingShader
+  m_Shader: {fileID: 4800000, guid: 747e132b42f325c4b8a770ac65085f23, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture_C89A8917:
+        m_Texture: {fileID: 2800000, guid: 4cfbb2c10195ade40a3109c2f311d710, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - Color_20AEF4C4: {r: 0.6670104, g: 0.6981132, b: 0.41162336, a: 1}
+    - Color_E3AF307F: {r: 0.43867916, g: 1, b: 0.8980559, a: 1}
+    - Color_E6166654: {r: 1, g: 0.97647053, b: 0, a: 1}
