@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: graphs_Meat
   m_Shader: {fileID: 4800000, guid: 72ba7ba46018f5b4c812d425be380f99, type: 3}
   m_ShaderKeywords: 
@@ -18,6 +19,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_25D5994D:
+        m_Texture: {fileID: 2800000, guid: 5fa3c0379f569b1469a1f7b8f97373ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_7AF4B2F7:
+        m_Texture: {fileID: 2800000, guid: b415b9f6f16b50c4b99a5809ba34c981, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture_F0001A27:
         m_Texture: {fileID: 2800000, guid: 5fa3c0379f569b1469a1f7b8f97373ed, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -27,8 +36,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_184A9F25: 0.4
     - Vector1_256E9FC9: 1
     - Vector1_5BF0CD6D: 0.4
+    - Vector1_754ADD35: 3
     m_Colors:
     - Color_6CCEC42E: {r: 1, g: 0, b: 0, a: 0}
+    - Color_7DA26D35: {r: 1, g: 0.8302624, b: 0, a: 0}
     - Color_84521E0D: {r: 1, g: 0.8302624, b: 0, a: 0}
+    - Color_EB85AB02: {r: 1, g: 0, b: 0, a: 0}

@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: graphs_LavaCrost
   m_Shader: {fileID: 4800000, guid: 0e9315c27f57c4d40b0cdffc141ae5fa, type: 3}
   m_ShaderKeywords: 
@@ -18,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_10B1DE0_Texture_1:
+        m_Texture: {fileID: 2800000, guid: b415b9f6f16b50c4b99a5809ba34c981, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_859C2B3C_Texture:
         m_Texture: {fileID: 2800000, guid: b415b9f6f16b50c4b99a5809ba34c981, type: 3}
         m_Scale: {x: 1, y: 1}

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_CrackedIce
+  m_Shader: {fileID: -6465566751694194690, guid: a555f00bfcc71f741af3f7b7f802e221,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_29409A83:
+        m_Texture: {fileID: 2800000, guid: f24f5118fabc21a4b83fb245e5a49a69, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_345F2AB:
+        m_Texture: {fileID: 2800000, guid: f342568f3009c39458ca522ede956d96, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_48D60B2A:
+        m_Texture: {fileID: 2800000, guid: d44594cb82f3ccc46993bae269af319b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_6EE48F72:
+        m_Texture: {fileID: 2800000, guid: 39e00828650c1a2439d11940ed8af674, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_CED72F8C:
+        m_Texture: {fileID: 2800000, guid: 8f61b3c1e11c7e4469cca2ad4df0d929, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_E3B21C25:
+        m_Texture: {fileID: 2800000, guid: fdd938d9986369947a435d645f4fbb00, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_16735487_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SimpleParalax_C4CDF353_Texture2D5D83FFF8_2905085418:
+        m_Texture: {fileID: 2800000, guid: 200c9c3d29dcc304bac2f91fff6c2cf7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_88F6BEAF: -0.0075
+    m_Colors: []
