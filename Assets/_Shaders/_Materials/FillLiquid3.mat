@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FillLiquid3
+  m_Shader: {fileID: -6465566751694194690, guid: 25369e95d04a9df4cb047d88b27aa888,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_569696D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_9324F731:
+        m_Texture: {fileID: 2800000, guid: 5fa3c0379f569b1469a1f7b8f97373ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_E884D059:
+        m_Texture: {fileID: 2800000, guid: 5fa3c0379f569b1469a1f7b8f97373ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_2627AF96: 0.2
+    - Vector1_293FB47A: 0.2
+    - Vector1_37DE07BD: 0.2
+    - Vector1_61C27591: 0.02
+    - Vector1_62715FAA: 0.2
+    - Vector1_6646B23C: 0.2
+    - Vector1_7031AD3F: 1
+    - Vector1_ABE13DC7: 0.02
+    - Vector1_B2D3961E: 1
+    - Vector1_B5A73803: 0.02
+    - Vector1_D53F77AB: 1
+    - Vector1_F017B8F0: 0.2
+    m_Colors:
+    - Color_3E7363BE: {r: 1, g: 0.3456931, b: 0, a: 0}
+    - Color_48EEA0CB: {r: 1, g: 0.9122155, b: 0.7764706, a: 0}
+    - Color_4F8DA256: {r: 0.8024664, g: 0, b: 1, a: 0}
+    - Color_5EA11709: {r: 0.45748186, g: 1, b: 0, a: 0}
+    - Color_6746BF5: {r: 1, g: 0.7996218, b: 0.33333337, a: 0}
+    - Color_790703B5: {r: 0, g: 0.5616164, b: 1, a: 0}
+    - Color_999D2AA5: {r: 0.8024664, g: 0, b: 1, a: 0}
+    - Color_9D17C777: {r: 1, g: 0, b: 0, a: 0}
+    - Color_A3B17EDD: {r: 0.45748186, g: 1, b: 0, a: 0}
+    - Color_C3BC53FA: {r: 0, g: 0.5616164, b: 1, a: 0}
+    - Color_C4BAF1B1: {r: 1, g: 0.65705234, b: 0, a: 0}
+    - Color_EB2D48F1: {r: 1, g: 0, b: 0, a: 0}

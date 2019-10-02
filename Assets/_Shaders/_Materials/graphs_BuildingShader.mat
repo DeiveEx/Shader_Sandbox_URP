@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: graphs_BuildingShader
+  m_Shader: {fileID: -6465566751694194690, guid: 777e136a7a4175147a97a797ecfee740,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_57965CD8:
+        m_Texture: {fileID: 2800000, guid: 4cfbb2c10195ade40a3109c2f311d710, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_AD1BF589:
+        m_Texture: {fileID: 2800000, guid: 4cfbb2c10195ade40a3109c2f311d710, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_C89A8917:
+        m_Texture: {fileID: 2800000, guid: 4cfbb2c10195ade40a3109c2f311d710, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture_C89A8917:
+        m_Texture: {fileID: 2800000, guid: 4cfbb2c10195ade40a3109c2f311d710, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_783E90A6_Out_0:
+        m_Texture: {fileID: 2800000, guid: 4cfbb2c10195ade40a3109c2f311d710, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - Color_20AEF4C4: {r: 0.5188679, g: 0.27578515, b: 0, a: 1}
+    - Color_248554A1: {r: 0.5330188, g: 1, b: 0.76673096, a: 1}
+    - Color_A963590D: {r: 1, g: 0.9764706, b: 0, a: 1}
+    - Color_B1152FC0: {r: 0.9716981, g: 0.9312885, b: 0.61877, a: 1}
+    - Color_B5F54BAE: {r: 1, g: 0.9764706, b: 0, a: 1}
+    - Color_DE64FD90: {r: 0.6839032, g: 0, b: 1, a: 1}
+    - Color_E3AF307F: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
+    - Color_E6166654: {r: 1, g: 0.97647053, b: 0, a: 1}
+    - Color_F3557104: {r: 1, g: 0, b: 0.5586052, a: 1}

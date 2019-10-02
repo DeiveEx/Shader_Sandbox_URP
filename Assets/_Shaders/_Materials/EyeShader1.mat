@@ -5,9 +5,11 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: FillLiquid3
-  m_Shader: {fileID: 4800000, guid: b0d88cfd8b81e024f8c37291890066bb, type: 3}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: EyeShader1
+  m_Shader: {fileID: -6465566751694194690, guid: 643b934304ab4694a90a24a5551d27f6,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -18,17 +20,13 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_9324F731:
+    - Texture2D_C0AFE33D:
         m_Texture: {fileID: 2800000, guid: 5fa3c0379f569b1469a1f7b8f97373ed, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_62715FAA: 0.2
-    - Vector1_6646B23C: 0.2
-    - Vector1_7031AD3F: 1
-    - Vector1_ABE13DC7: 0.02
+    - Vector1_6ECFCC9F: 0.5
+    - Vector1_9B241326: 0.05
     m_Colors:
-    - Color_3E7363BE: {r: 1, g: 0.3456931, b: 0, a: 0}
-    - Color_48EEA0CB: {r: 1, g: 0.9122155, b: 0.7764706, a: 0}
-    - Color_6746BF5: {r: 1, g: 0.7996218, b: 0.33333337, a: 0}
-    - Color_C4BAF1B1: {r: 1, g: 0.65705234, b: 0, a: 0}
+    - Color_652CA896: {r: 1.803922, g: 2, b: 0, a: 0}
+    - Vector2_84CC4B62: {r: 0.2, g: 0.5, b: 0, a: 0}

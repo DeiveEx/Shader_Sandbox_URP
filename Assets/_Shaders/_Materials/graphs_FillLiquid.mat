@@ -5,9 +5,11 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: graphs_FillLiquid
-  m_Shader: {fileID: 4800000, guid: 7152bacd2e4b5b14ea181cddb90ded87, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 760878f51a0c5a54cbe19da124fba382,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,10 +21,14 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
+    - Vector1_10104B35: 0.5
     - Vector1_26EAC653: 1.17
     - Vector1_66FA35FE: 1.1
     - Vector1_B9DEBD62: 4.02
+    - Vector1_BAF014D3: 3
     - Vector1_DAFE8DA8: 1.38
+    - Vector1_DC6F5A6B: 1
+    - Vector1_F4F23E42: 2
     - _FillAmount: 1
     - _GradientPosition: 0.38
     - _GradientSpread: 3
@@ -30,8 +36,12 @@ Material:
     m_Colors:
     - Color_38D35A7F: {r: 0.918581, g: 0.6556604, b: 1, a: 1}
     - Color_5523CA44: {r: 0.8207547, g: 0.32907617, b: 0.7359162, a: 1}
+    - Color_650C6714: {r: 0.45748186, g: 1, b: 0, a: 1}
     - Color_6FF0BC4E: {r: 0.6786728, g: 0, b: 1, a: 1}
+    - Color_9BD4CA14: {r: 1, g: 0, b: 0, a: 0}
     - Color_C484915C: {r: 1, g: 0, b: 0.8285713, a: 1}
+    - Color_D2350EE0: {r: 1, g: 0, b: 0.8285713, a: 1}
+    - Color_FF2E6F97: {r: 0.030209428, g: 0.42452827, b: 0.01401745, a: 1}
     - _BackFaceColor: {r: 0.95908827, g: 0.4292453, b: 1, a: 1}
     - _FronFaceTopColor: {r: 1, g: 0, b: 0.8285713, a: 1}
     - _FrontFaceBottonColor: {r: 0.7075472, g: 0, b: 0.6410908, a: 0}
