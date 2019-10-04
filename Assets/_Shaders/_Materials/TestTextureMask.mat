@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: TestTextureMask
   m_Shader: {fileID: 4800000, guid: f4b5e38189af9174eaad80718194269c, type: 3}
   m_ShaderKeywords: 
@@ -18,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_BD72AA23:
+        m_Texture: {fileID: 2800000, guid: d7be9a9b5095b2d44acaa3e7709e1aab, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_BFE00BCF:
         m_Texture: {fileID: 2800000, guid: d7be9a9b5095b2d44acaa3e7709e1aab, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -27,7 +32,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_5338CFA1: 1
     - Vector1_85A2B9F9: 1
+    - Vector1_C65A7509: 0.1
     - Vector1_D981603D: 0.1
     m_Colors:
+    - Color_3DB00E62: {r: 548.7482, g: 0, b: 0, a: 0}
     - Color_68534C0E: {r: 0.17022514, g: 1, b: 0, a: 0}
