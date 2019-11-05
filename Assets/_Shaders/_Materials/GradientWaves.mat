@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: GradientWaves
   m_Shader: {fileID: 4800000, guid: 6603a81ccc015ad4ca8eb49e355ce803, type: 3}
   m_ShaderKeywords: 
@@ -19,6 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _Speed: 0.5
+    - _Speed: 1
     m_Colors:
     - Color_25A0A0A4: {r: 0, g: 0.7109957, b: 1, a: 0}
+    - Color_7A1F7ABA: {r: 0, g: 0.7109957, b: 1, a: 0}
