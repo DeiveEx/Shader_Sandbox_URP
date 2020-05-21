@@ -20,13 +20,15 @@
 // Hierarchical: https://www.shadertoy.com/view/Xll3zX
 // Smooth:       https://www.shadertoy.com/view/ldB3zc
 // Voronoise:    https://www.shadertoy.com/view/Xd23Dh
-float2 hash2( float2 p )
+
+inline float2 unity_voronoi_noise_randomVector (float2 UV, float offset) //This function was taken from Unity's Voronoi node documentation, and not from ShaderToy
 {
-    // procedural white noise	
-	return frac(sin(float2(dot(p,float2(127.1, 311.7)),dot(p,float2(269.5, 183.3)))) * 43758.5453);
+    float2x2 m = float2x2(15.27, 47.63, 99.41, 89.98);
+    UV = frac(sin(mul(UV, m)) * 46839.32);
+    return float2(sin(UV.y*+offset)*0.5+0.5, cos(UV.x*offset)*0.5+0.5);
 }
 
-float3 voronoi( in float2 x, in float offset )
+void voronoi( in float2 x, in float offset, out float Out , out float cells, out float3 color)
 {
     float2 n = floor(x);
     float2 f = frac(x); 
@@ -41,11 +43,7 @@ float3 voronoi( in float2 x, in float offset )
         for( int i=-1; i<=1; i++ )
         {
             float2 g = float2(float(i),float(j));
-		    float2 o = hash2( (n + g) * offset );
-
-		    #ifdef ANIMATE
-            o = 0.5 + 0.5*sin( iTime + 6.2831*o );
-            #endif	
+		    float2 o = unity_voronoi_noise_randomVector(g + n, offset);//hash2( (n + g) * offset );
 
             float2 r = g + o - f;
             float d = dot(r,r);
@@ -55,6 +53,9 @@ float3 voronoi( in float2 x, in float offset )
                 md = d;
                 mr = r;
                 mg = g;
+
+                Out = d;
+                cells = o.x;
             }
         }
     }
@@ -67,11 +68,7 @@ float3 voronoi( in float2 x, in float offset )
         for( int i=-2; i<=2; i++ )
         {
             float2 g = mg + float2(float(i),float(j));
-		    float2 o = hash2( (n + g) * offset );
-
-		    #ifdef ANIMATE
-            o = 0.5 + 0.5*sin( iTime + 6.2831*o );
-            #endif	
+		    float2 o = unity_voronoi_noise_randomVector(g + n, offset);//hash2( (n + g) * offset );
 
             float2 r = g + o - f;
 
@@ -81,14 +78,12 @@ float3 voronoi( in float2 x, in float offset )
         }
     }
 
-    return float3( md, mr );
+    color = float3( md, mr );
 }
 
-void GetVoronoi_float(float2 uv, float angleOffset, float cellDensity, out float4 Color){
-    
-    float3 c = voronoi(uv * cellDensity, angleOffset / 100);
-
-    Color = float4(c, 0);
+void GetVoronoi_float(float2 uv, float angleOffset, float cellDensity, out float Out , out float cells, out float3 color)
+{
+    voronoi(uv * cellDensity, angleOffset, Out, cells, color);
 }
 
 #endif
