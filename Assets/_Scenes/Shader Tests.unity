@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -279,6 +279,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38186417}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &76056939
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_ColorScrolling (Instance)
+  m_Shader: {fileID: -6465566751694194690, guid: 64cb2916d03163945ae83696b74d1957,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats: []
+    m_Colors: []
+--- !u!21 &79000485
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: graphs_FillLiquid (Instance)
+  m_Shader: {fileID: -6465566751694194690, guid: 760878f51a0c5a54cbe19da124fba382,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_10104B35: 0.5
+    - Vector1_26EAC653: 1.17
+    - Vector1_66FA35FE: 1.1
+    - Vector1_B9DEBD62: 4.02
+    - Vector1_BAF014D3: 3
+    - Vector1_DAFE8DA8: 1.38
+    - Vector1_DC6F5A6B: 1
+    - Vector1_F4F23E42: 2
+    - _FillAmount: 1.121837
+    - _GradientPosition: 0.38
+    - _GradientSpread: 3
+    - _RimPower: 0.9
+    m_Colors:
+    - Color_38D35A7F: {r: 0.918581, g: 0.6556604, b: 1, a: 1}
+    - Color_5523CA44: {r: 0.8207547, g: 0.32907617, b: 0.7359162, a: 1}
+    - Color_650C6714: {r: 0.45748186, g: 1, b: 0, a: 1}
+    - Color_6FF0BC4E: {r: 0.6786728, g: 0, b: 1, a: 1}
+    - Color_9BD4CA14: {r: 1, g: 0, b: 0, a: 0}
+    - Color_C484915C: {r: 1, g: 0, b: 0.8285713, a: 1}
+    - Color_D2350EE0: {r: 1, g: 0, b: 0.8285713, a: 1}
+    - Color_FF2E6F97: {r: 0.030209428, g: 0.42452827, b: 0.01401745, a: 1}
+    - _BackFaceColor: {r: 0.95908827, g: 0.4292453, b: 1, a: 1}
+    - _FronFaceTopColor: {r: 1, g: 0, b: 0.8285713, a: 1}
+    - _FrontFaceBottonColor: {r: 0.7075472, g: 0, b: 0.6410908, a: 0}
+    - _RimColor: {r: 0.5596056, g: 0, b: 1, a: 1}
 --- !u!1 &102686271
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +651,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 503b566ad9e89ef4988a6e17bb54103d, type: 2}
+  - {fileID: 647293623}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -679,7 +747,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b6b303244c1c1f6448aa87879a41902e, type: 2}
+  - {fileID: 1767857073}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -839,7 +907,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 510e4d1aef98f394e83591fb884fb8a5, type: 2}
+  - {fileID: 572878861}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1424,7 +1492,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2bbf6cdd15bd825419f4e5b652bd8a7c, type: 2}
+  - {fileID: 1052173423}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1647,7 +1715,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ccae89fd08a09684c80b662567993f7d, type: 2}
+  - {fileID: 79000485}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1692,6 +1760,45 @@ MonoBehaviour:
   min: 0.8
   max: 1.2
   speed: 1
+--- !u!21 &572878861
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TestTextureMask (Instance)
+  m_Shader: {fileID: 4800000, guid: f4b5e38189af9174eaad80718194269c, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_BD72AA23:
+        m_Texture: {fileID: 2800000, guid: 01af97e7615294a43a16234155fe364b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_BFE00BCF:
+        m_Texture: {fileID: 2800000, guid: d7be9a9b5095b2d44acaa3e7709e1aab, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_BE7BBEE_Out:
+        m_Texture: {fileID: 2800000, guid: d7be9a9b5095b2d44acaa3e7709e1aab, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_5338CFA1: 1
+    - Vector1_85A2B9F9: 1
+    - Vector1_C65A7509: 0.1
+    - Vector1_D981603D: 0.1
+    m_Colors:
+    - Color_3DB00E62: {r: 548.7482, g: 0, b: 0, a: 0}
+    - Color_68534C0E: {r: 0.17022514, g: 1, b: 0, a: 0}
 --- !u!1 &578890103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,6 +1957,47 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604913573}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &647293623
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Planet (Instance)
+  m_Shader: {fileID: 4800000, guid: 1fa0cdc9eb176ab4f973d640e097eaf7, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Texture2DAsset_A0DE00A1_Out:
+        m_Texture: {fileID: 2800000, guid: 5fa3c0379f569b1469a1f7b8f97373ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_B73CF07B_Out:
+        m_Texture: {fileID: 2800000, guid: 5fa3c0379f569b1469a1f7b8f97373ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_EBCA4B5D_Out_0:
+        m_Texture: {fileID: 2800000, guid: 5fa3c0379f569b1469a1f7b8f97373ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_FB3B0EFD_Out_0:
+        m_Texture: {fileID: 2800000, guid: 5fa3c0379f569b1469a1f7b8f97373ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_49E1D61B: 0
+    - Vector1_746AD04C: 1
+    - Vector1_C07DEEED: 7.38
+    - Vector1_FC864D88: 1.88
+    m_Colors: []
 --- !u!1 &673546658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,7 +2144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c7febc07dff4ea548b018038134775df, type: 2}
+  - {fileID: 995051171}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2344,7 +2492,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 76ea7f0330399c745ba1a8cdfdae48fc, type: 2}
+  - {fileID: 2047722886}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2531,6 +2679,62 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902364255}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &995051171
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Twirl (Instance)
+  m_Shader: {fileID: 4800000, guid: d3d99921c31e6704f809772849b9fe7f, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_F1F2566D: 0
+    - Vector1_F678FF8D: 0.5
+    - _Speed: 0.1
+    - _Strenghth: 0.2
+    - _Strength: 0.008449569
+    m_Colors:
+    - _Color: {r: 0, g: 0.6558828, b: 1, a: 0}
+--- !u!21 &1052173423
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MaskedDisplace (Instance)
+  m_Shader: {fileID: 4800000, guid: 4fdcd853431b41f4d9e724b44df56716, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_78D62EF6: 0.1
+    - Vector1_8BB3DCE9: 0.2
+    - Vector1_F10473A3: -0.68
+    - _Magnitude: 0.1
+    - _Position: -0.6763412
+    - _Size: 0.2
+    m_Colors:
+    - _DisplaceColor: {r: 0, g: 1, b: 0.7328503, a: 1}
+    - _MainColor: {r: 0.6494389, g: 0.0032484946, b: 0.6886792, a: 0}
 --- !u!1 &1072218726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,7 +2885,6 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_CameraOutput: 0
   m_Cameras: []
   m_RendererIndex: -1
   m_VolumeLayerMask:
@@ -2693,6 +2896,7 @@ MonoBehaviour:
   m_AntialiasingQuality: 2
   m_StopNaN: 1
   m_Dithering: 0
+  m_ClearDepth: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
@@ -4308,6 +4512,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746826160}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &1767857073
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_WaterWaves (Instance)
+  m_Shader: {fileID: 4800000, guid: bedc549bf29a5594b96f85a7f8fb35ed, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _SampleTexture2DLOD_EE371C1D_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 5fa3c0379f569b1469a1f7b8f97373ed, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_EACB425F: 1.89
+    m_Colors: []
 --- !u!1 &1780380421
 GameObject:
   m_ObjectHideFlags: 0
@@ -4635,6 +4865,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012138050}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &2047722886
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GradientWaves (Instance)
+  m_Shader: {fileID: 4800000, guid: 6603a81ccc015ad4ca8eb49e355ce803, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - _Speed: 1
+    m_Colors:
+    - Color_25A0A0A4: {r: 0, g: 0.7109957, b: 1, a: 0}
+    - Color_7A1F7ABA: {r: 0, g: 0.7109957, b: 1, a: 0}
 --- !u!1 &2057712201
 GameObject:
   m_ObjectHideFlags: 0
@@ -4702,7 +4956,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2eee009a9f9adeb4f84b0a5a561c236e, type: 2}
+  - {fileID: 76056939}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

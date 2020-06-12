@@ -9,13 +9,16 @@ public class SinPropertyShaderTest : MonoBehaviour {
 	private Renderer rend;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		rend = GetComponent<Renderer>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		float t = Mathf.Lerp(min, max, (Mathf.Sin(Time.time * speed) * .5f) + .5f);
-		rend.material.SetFloat(propertyName, t);
+		if(rend != null)
+		{
+			float t = Mathf.Lerp(min, max, (Mathf.Sin(Time.time * speed) * .5f) + .5f);
+			rend.material.SetFloat(propertyName, t);
+		}
 	}
 }
