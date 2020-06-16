@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1797,7 +1797,7 @@ Material:
     - Vector1_C65A7509: 0.1
     - Vector1_D981603D: 0.1
     m_Colors:
-    - Color_3DB00E62: {r: 548.7482, g: 0, b: 0, a: 0}
+    - Color_3DB00E62: {r: 2.9960785, g: 0, b: 0, a: 1}
     - Color_68534C0E: {r: 0.17022514, g: 1, b: 0, a: 0}
 --- !u!1 &578890103
 GameObject:
