@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_BloodSplatter
-  m_Shader: {fileID: -6465566751694194690, guid: c7862625d0dadc549bde50e7300d4d9c,
+  m_Name: Shader Graphs_DecalNodeTest
+  m_Shader: {fileID: -6465566751694194690, guid: a3f63113e8ef7cb468df385801f6aa40,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,14 +20,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_12A59F46:
-        m_Texture: {fileID: 2800000, guid: 8cd238a34965af0409cd8bf99b57c67e, type: 3}
+    - Texture2D_51B5D4AD:
+        m_Texture: {fileID: 2800000, guid: 03119865611f8dd4eaedda89ffb528fc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_240068FD: 0
-    - Vector1_6C3F6687: 0.6
-    - Vector1_F43F9B88: 6
+    m_Floats: []
     m_Colors:
-    - Color_3F262AF8: {r: 2.0000005, g: 2.0000005, b: 2.0000005, a: 1}
-    - Color_5D96AC0: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 0}
+    - Color_D78B83F2: {r: 1, g: 1, b: 1, a: 1}
