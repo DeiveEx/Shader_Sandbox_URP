@@ -85,3 +85,21 @@ Update Mode: updateDependencies
 The following packages were updated:
   com.unity.ide.vscode from version 1.2.0 to 1.2.1
   com.unity.test-framework from version 1.1.14 to 1.1.16
+
+=== Wed Dec 29 18:51:32 2021
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.ide.visualstudio@2.0.11
+The following packages were updated:
+  com.unity.collab-proxy from version 1.2.16 to 1.7.1
+  com.unity.ext.nunit from version 1.0.0 to 1.0.6
+  com.unity.ide.vscode from version 1.2.1 to 1.2.3
+  com.unity.quicksearch from version 1.5.4 to 2.0.2
+  com.unity.render-pipelines.universal from version 7.3.1 to 10.5.1
+  com.unity.shadergraph from version 7.3.1 to 10.5.1
+  com.unity.test-framework from version 1.1.16 to 1.1.27
+  com.unity.timeline from version 1.2.10 to 1.4.8
+  com.unity.xr.legacyinputhelpers from version 2.1.4 to 2.1.7
