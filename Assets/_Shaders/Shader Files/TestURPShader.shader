@@ -17,7 +17,7 @@ Shader "Test/TestURPShader"
         HLSLINCLUDE
         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl" //Imports the standart URL shader library
 
-        //To make sure that the shader is compatible with the SRP Batcher, we need to declare the properties inside a CBUFFER block with the name "UnityPerMaterial"
+        //To make sure that the shader is compatible with the SRP Batcher (which is basically a way to render things faster), we need to declare the properties inside a CBUFFER block with the name "UnityPerMaterial"
         CBUFFER_START(UnityPerMaterial)
             float4 _BaseColor;
             float4 _MainTex_ST;
@@ -32,7 +32,7 @@ Shader "Test/TestURPShader"
         {
             float4 position: POSITION;
             float2 uv: TEXCOORD0;
-        };
+        }; //Don't forget the semicolon
 
         struct v2f
         {
@@ -53,7 +53,7 @@ Shader "Test/TestURPShader"
             v2f vert(appData i)
             {
                 v2f o;
-                o.position = TransformObjectToHClip(i.position); //New function to transform vertex position from local pos to clip pos
+                o.position = TransformObjectToHClip(i.position.xyz); //New function to transform vertex position from local pos to clip pos
                 o.uv = TRANSFORM_TEX(i.uv, _MainTex);
                 return o;
             }
