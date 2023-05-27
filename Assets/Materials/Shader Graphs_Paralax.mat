@@ -1,8 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5640675613908416999
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10,7 +23,8 @@ Material:
   m_Name: Shader Graphs_Paralax
   m_Shader: {fileID: -6465566751694194690, guid: 4cf24edce0d76ec45b3311579ed7ecb5,
     type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,13 +33,29 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - Vector1_2EBD8093: 0.2
     - Vector1_96641E84: 0.25
     - Vector1_F6E58E71: 0.11
+    - _QueueControl: 0
+    - _QueueOffset: 0
     m_Colors:
     - Color_6D710A91: {r: 0.3294118, g: 0.40441042, b: 0.8, a: 0}
     - Color_90F8CDAD: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 0}
     - Vector2_BBB41D6A: {r: 0.3, g: 0.4, b: 0, a: 0}
     - Vector2_FC2B8B14: {r: 0.1, g: 0.3, b: 0, a: 0}
+  m_BuildTextureStacks: []

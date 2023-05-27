@@ -103,3 +103,28 @@ The following packages were updated:
   com.unity.test-framework from version 1.1.16 to 1.1.27
   com.unity.timeline from version 1.2.10 to 1.4.8
   com.unity.xr.legacyinputhelpers from version 2.1.4 to 2.1.7
+
+=== Mon Sep 12 17:40:22 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.collab-proxy from version 1.7.1 to 1.15.18
+  com.unity.ide.visualstudio from version 2.0.12 to 2.0.15
+  com.unity.ide.vscode from version 1.2.4 to 1.2.5
+  com.unity.render-pipelines.universal from version 10.5.1 to 12.1.7
+  com.unity.shadergraph from version 10.5.1 to 12.1.7
+  com.unity.test-framework from version 1.1.30 to 1.1.31
+  com.unity.timeline from version 1.4.8 to 1.6.4
+  com.unity.xr.legacyinputhelpers from version 2.1.8 to 2.1.9
+The following packages were removed:
+  com.unity.quicksearch@2.0.2
+
+=== Fri Feb 17 11:29:53 2023
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.ide.visualstudio from version 2.0.15 to 2.0.16

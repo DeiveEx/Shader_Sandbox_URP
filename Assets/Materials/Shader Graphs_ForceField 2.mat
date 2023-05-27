@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10,7 +10,8 @@ Material:
   m_Name: Shader Graphs_ForceField 2
   m_Shader: {fileID: -6465566751694194690, guid: 914d3c30374235547838fc93aec707ec,
     type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -28,14 +29,43 @@ Material:
         m_Texture: {fileID: 2800000, guid: 8cb9b65b7fa2cb44b8c370ffd84570af, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - Vector1_6635D007: 0.01
     - Vector1_759D1AB9: 5
     - Vector1_9BF6CCA2: 0.5
     - Vector1_9F2AD0B2: 0.2
+    - _QueueControl: 0
+    - _QueueOffset: 0
     m_Colors:
     - Color_AC0C540: {r: 0.0352941, g: 0.13508959, b: 0.49019608, a: 1}
     - Color_ADF1C618: {r: 0, g: 8.533334, b: 16, a: 1}
     - Vector2_21DE0261: {r: 1, g: 1, b: 0, a: 0}
     - Vector2_327F1D89: {r: 2, g: 1, b: 0, a: 0}
     - Vector2_61B01C2E: {r: 0, g: 0.1, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &2588082850679588084
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5

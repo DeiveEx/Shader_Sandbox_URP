@@ -1,14 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-927236777276626271
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: graphs_FireTest2
   m_Shader: {fileID: 4800000, guid: 8ea114b05740dea45ae10e24812b0799, type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -17,14 +32,38 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - Vector1_13FEA691: 0.44
     - Vector1_206AC2D7: 0.65
     - Vector1_466C549E: 1
+    - Vector1_67F7DFC3: 0.81
+    - Vector1_6D4C3B54: 1.13
+    - Vector1_8967976F: 0.44
     - Vector1_A15B3DB5: 1.25
+    - Vector1_BB3D2F15: 0.65
+    - _QueueControl: 0
+    - _QueueOffset: 0
     m_Colors:
+    - Color_40C7A565: {r: 1, g: 0.2031098, b: 0, a: 1}
     - Color_479D0D9A: {r: 0.4245283, g: 0.17341581, b: 0.006007465, a: 1}
+    - Color_B58C9F38: {r: 1, g: 0.4367325, b: 0, a: 1}
     - Color_CC9759ED: {r: 1, g: 0.2031098, b: 0, a: 1}
+    - Color_CF5EB46: {r: 1, g: 0.7341389, b: 0, a: 1}
+    - Color_D65FA153: {r: 1, g: 0.3295138, b: 0, a: 1}
     - Color_E89DAFEA: {r: 1, g: 0.4367325, b: 0, a: 1}
     - Color_EB220741: {r: 1, g: 0.3295138, b: 0, a: 1}
+  m_BuildTextureStacks: []

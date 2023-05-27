@@ -1,8 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4616680737047030276
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10,7 +23,8 @@ Material:
   m_Name: Outline_Graph
   m_Shader: {fileID: -6465566751694194690, guid: bd82678b845239242bbf7c8efc5603b5,
     type: 3}
-  m_ShaderKeywords: 
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -36,13 +50,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
-    - Vector1_1ef85e07a1d545319a6557b6f12880a6: 0.6
-    - Vector1_3ad0bcf7e2f04e93b28e6600462aeaeb: 1.5
-    - Vector1_6a367185201c40ccba4fcaa5ce1f1ae0: 7
+    - Vector1_1ef85e07a1d545319a6557b6f12880a6: 0.411
+    - Vector1_3ad0bcf7e2f04e93b28e6600462aeaeb: 2.5
+    - Vector1_6a367185201c40ccba4fcaa5ce1f1ae0: 10
     - Vector1_905480a965fa438ca0972ee65e4626ba: 1000
-    - Vector1_a0ae8bb5705946559ee7ac0ec5b6ca8e: 0.3
-    - Vector1_e83696138d144c3ebae66e1fec40ff1f: 7
+    - Vector1_a0ae8bb5705946559ee7ac0ec5b6ca8e: 1
+    - Vector1_e83696138d144c3ebae66e1fec40ff1f: 7.92
+    - _QueueControl: 0
+    - _QueueOffset: 0
     m_Colors:
     - Color_e8bcba9c817d4eb487f66b1bd8155baf: {r: 0.21999979, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []
