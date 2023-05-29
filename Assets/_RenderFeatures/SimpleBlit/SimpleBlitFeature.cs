@@ -30,14 +30,17 @@ public class SimpleBlitFeature : ScriptableRendererFeature
 
 		public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
 		{
-			//Get a command buffer from the pool so we can queue our commands
+			//To execute commands, we need to enqueue them into a command buffer, so we get a command buffer from the
+			//pool that unity provides and give it a custom name so we can identify it while debugging
 			var cmdBuffer = CommandBufferPool.Get(profileName);
 
+			//Here we write the commands that will be inserted into the buffer
+			
 			//We can't read and write to the same texture, so we need to use a temporary texture
 			Blit(cmdBuffer, source, tempTexture.Identifier()); //Copy from source to the temp texture
 			Blit(cmdBuffer, tempTexture.Identifier(), source, material, passIndex); //Copy from the temp texture to source again, now applying the shader
 
-			//Execture and release the buffer
+			//Execute and release the buffer
 			context.ExecuteCommandBuffer(cmdBuffer);
 			CommandBufferPool.Release(cmdBuffer);
 		}

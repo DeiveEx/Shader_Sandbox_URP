@@ -28,9 +28,9 @@ public class ScreenSpaceOutline : ScriptableRendererFeature
 	class ViewSpaceNormalsTexturePass : ScriptableRenderPass
 	{
 		private string profilingName; //The pass name that will appear in the Frame Debugger
-		private RenderTargetHandle normalsTexture; //Our target texture
+		private RenderTargetHandle normalsTexture; //Our target texture handle. A RTHandle is an abstraction layer over Render textures that Unity created to solve some memory issues. But the idea is that this represents a render texture
 		private ViewSpaceNormalsTextureSettings normalsTextureSettings; //Some custom settings for the target texture
-		private List<ShaderTagId> shaderTagIDList; //Which shaderss will be included when rendering?
+		private List<ShaderTagId> shaderTagIDList; //Which shaders will be included when rendering?
 		private Material normalsMaterial; //The material used to actually render the normals
 		private Material occluderMaterial; //The material used to render objects that should occlude the normals
 		private FilteringSettings filteringSettings; //Additional filtering settings to decide what to render (things like "which layer mask should the renderer be?")
