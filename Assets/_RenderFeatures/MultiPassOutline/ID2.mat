@@ -23,6 +23,8 @@ Material:
     m_Ints:
     - _OutlineID: 200
     m_Floats:
-    - _OutlineID: 20
-    m_Colors: []
+    - _OutlineColor: 0
+    - _OutlineID: 200
+    m_Colors:
+    - _OutlineColor: {r: 0, g: 1, b: 0.11046505, a: 1}
   m_BuildTextureStacks: []

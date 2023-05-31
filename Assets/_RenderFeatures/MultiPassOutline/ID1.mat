@@ -27,7 +27,11 @@ Material:
     m_Ints:
     - _OutlineID: 141
     m_Floats:
-    - _OutlineID: 50
+    - _OutlineColor: 0
+    - _OutlineID: 100
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineC0lor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineCOlor: {r: 0, g: 0, b: 0, a: 0}
+    - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

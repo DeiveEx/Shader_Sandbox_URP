@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   renderEvent: 600
-  blitMaterial: {fileID: 0}
+  blitMaterial: {fileID: 2100000, guid: d3fc9162e8005094aa320b14dc464fd0, type: 2}
   passIndex: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -87,6 +87,4 @@ MonoBehaviour:
   m_Name: MultiPassOutlineFeature
   m_EditorClassIdentifier: 
   m_Active: 1
-  lightModeTags:
-  - CustomOutline
   _outlineMaterial: {fileID: 2100000, guid: 4fed0d25ea49ad748ac50d5b9af53461, type: 2}

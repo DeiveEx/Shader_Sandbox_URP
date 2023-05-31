@@ -1,27 +1,32 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 public class MultiPassOutlineFeature : ScriptableRendererFeature
 {
-    [SerializeField] private List<string> lightModeTags;
     [SerializeField] private Material _outlineMaterial;
 
-    private MultiPassOutlineFirstPass _firstPass;
-    private MultiPassOutlineSecondPass _secondPass;
+    private OutlineIDsPass _iDsPass;
+    private OutlineColors _colorsPass;
+    private FinalOutlinePass _finalOutlinesPass;
 
     public override void Create()
     {
-        //The first pass renders the object IDs into a render texture
-        _firstPass = new MultiPassOutlineFirstPass(lightModeTags)
+        //This pass renders the object IDs into a render texture
+        _iDsPass = new OutlineIDsPass()
+        {
+            renderPassEvent = RenderPassEvent.AfterRenderingPrePasses
+        };
+
+        //This pass renders the colors of the outline
+        _colorsPass = new OutlineColors()
         {
             renderPassEvent = RenderPassEvent.AfterRenderingPrePasses
         };
         
-        //The second pass creates a Render Texture with the outlines
-        _secondPass = new MultiPassOutlineSecondPass(_outlineMaterial)
+        //This pass creates a Render Texture with the outlines
+        _finalOutlinesPass = new FinalOutlinePass(_outlineMaterial)
         {
             renderPassEvent = RenderPassEvent.BeforeRenderingOpaques
         };
@@ -29,18 +34,19 @@ public class MultiPassOutlineFeature : ScriptableRendererFeature
 
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
-        renderer.EnqueuePass(_firstPass);
-        renderer.EnqueuePass(_secondPass);
+        renderer.EnqueuePass(_iDsPass);
+        renderer.EnqueuePass(_colorsPass);
+        renderer.EnqueuePass(_finalOutlinesPass);
     }
 }
 
-public class MultiPassOutlineFirstPass : ScriptableRenderPass
+public class OutlineIDsPass : ScriptableRenderPass
 {
     private RenderTargetHandle _renderTextureHandle;
     private FilteringSettings _filter;
     private List<ShaderTagId> _shaderTagIDList;
 
-    public MultiPassOutlineFirstPass(List<string> lightModeTags)
+    public OutlineIDsPass()
     {
         _renderTextureHandle.Init("_OutlineId"); //Initializes our RT Handle. Note that a handle just represents a RT, but it's not an actual RT
         _filter = new FilteringSettings(RenderQueueRange.opaque);
@@ -49,7 +55,10 @@ public class MultiPassOutlineFirstPass : ScriptableRenderPass
         //built-in values for this tag, but you can also set the LightMode tag to a custom value for your own use. I have no idea why it's
         //called "LightMode" when it's not strictly related to lighting, though. They probably didn't change it in order
         //to not break old projects (although they had teh chance to change it when creating the SRPs...)
-        _shaderTagIDList = lightModeTags.Select(x => new ShaderTagId(x)).ToList();
+        _shaderTagIDList = new List<ShaderTagId>()
+        {
+            new ShaderTagId("CustomOutlineID")
+        };
     }
 
     public override void Configure(CommandBuffer cmd, RenderTextureDescriptor cameraTextureDescriptor)
@@ -73,9 +82,9 @@ public class MultiPassOutlineFirstPass : ScriptableRenderPass
         if(_shaderTagIDList == null || _shaderTagIDList.Count == 0)
             return;
         
-        var commandBuffer = CommandBufferPool.Get($"{nameof(MultiPassOutlineFirstPass)}");
+        var commandBuffer = CommandBufferPool.Get($"{nameof(OutlineIDsPass)}");
 
-        using (new ProfilingScope(commandBuffer, new ProfilingSampler($"{nameof(MultiPassOutlineFirstPass)}")))
+        using (new ProfilingScope(commandBuffer, new ProfilingSampler($"{nameof(OutlineIDsPass)}")))
         {
             //Clears the buffer. I'm not sure why we need to execute it before clearing, but it doesn't work if we don't do that
             context.ExecuteCommandBuffer(commandBuffer);
@@ -92,7 +101,7 @@ public class MultiPassOutlineFirstPass : ScriptableRenderPass
             context.DrawRenderers(renderingData.cullResults, ref drawingSettings, ref _filter);
         }
         
-        //Finallky, execute our own commands that were inserted into the buffer
+        //Finally, execute our own commands that were inserted into the buffer
         context.ExecuteCommandBuffer(commandBuffer);
         CommandBufferPool.Release(commandBuffer);
     }
@@ -103,13 +112,70 @@ public class MultiPassOutlineFirstPass : ScriptableRenderPass
     }
 }
 
-public class MultiPassOutlineSecondPass : ScriptableRenderPass
+public class OutlineColors : ScriptableRenderPass
+{
+    private RenderTargetHandle _renderTextureHandle;
+    private FilteringSettings _filter;
+    private List<ShaderTagId> _shaderTagIDList;
+
+    public OutlineColors()
+    {
+        _renderTextureHandle.Init("_OutlineColors");
+        _filter = new FilteringSettings(RenderQueueRange.opaque);
+
+        _shaderTagIDList = new List<ShaderTagId>()
+        {
+            new ShaderTagId("CustomOutlineColor")
+        };
+    }
+
+    public override void Configure(CommandBuffer cmd, RenderTextureDescriptor cameraTextureDescriptor)
+    {
+        RenderTextureDescriptor tempRTDescriptor = cameraTextureDescriptor;
+        tempRTDescriptor.colorFormat = RenderTextureFormat.ARGBFloat;
+        
+        cmd.GetTemporaryRT(_renderTextureHandle.id, tempRTDescriptor, FilterMode.Point);
+        
+        ConfigureTarget(_renderTextureHandle.Identifier());
+        
+        ConfigureClear(ClearFlag.All, Color.black);
+    }
+
+    public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
+    {
+        if(_shaderTagIDList == null || _shaderTagIDList.Count == 0)
+            return;
+        
+        var commandBuffer = CommandBufferPool.Get($"{nameof(OutlineColors)}");
+
+        using (new ProfilingScope(commandBuffer, new ProfilingSampler($"{nameof(OutlineColors)}")))
+        {
+            context.ExecuteCommandBuffer(commandBuffer);
+            commandBuffer.Clear();
+            
+            var drawingSettings = CreateDrawingSettings(_shaderTagIDList, ref renderingData, renderingData.cameraData.defaultOpaqueSortFlags);
+
+            context.DrawRenderers(renderingData.cullResults, ref drawingSettings, ref _filter);
+        }
+        
+        context.ExecuteCommandBuffer(commandBuffer);
+        CommandBufferPool.Release(commandBuffer);
+    }
+
+    public override void FrameCleanup(CommandBuffer cmd)
+    {
+        cmd.ReleaseTemporaryRT(_renderTextureHandle.id);
+    }
+}
+
+
+public class FinalOutlinePass : ScriptableRenderPass
 {
     private Material _outlineMaterial;
     private RenderTargetIdentifier _source;
     private RenderTargetHandle _target;
 
-    public MultiPassOutlineSecondPass(Material outlineMaterial)
+    public FinalOutlinePass(Material outlineMaterial)
     {
         _outlineMaterial = outlineMaterial;
         _target.Init("_OutlineTexture");
@@ -130,7 +196,7 @@ public class MultiPassOutlineSecondPass : ScriptableRenderPass
         if(_outlineMaterial == null)
             return;
         
-        var cmdBuffer = CommandBufferPool.Get($"{nameof(MultiPassOutlineSecondPass)}");
+        var cmdBuffer = CommandBufferPool.Get($"{nameof(FinalOutlinePass)}");
 
         //We can't read and write to the same texture, so we need to use a temporary texture
         Blit(cmdBuffer, _source, _target.Identifier(), _outlineMaterial, 0);

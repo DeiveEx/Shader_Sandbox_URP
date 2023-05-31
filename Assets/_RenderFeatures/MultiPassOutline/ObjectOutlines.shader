@@ -10,6 +10,8 @@ Shader "Custom/ObjectOutlines"
 
         Pass
         {
+            ZWrite On
+            
             HLSLPROGRAM
             
             #pragma exclude_renderers d3d11_9x
@@ -38,9 +40,13 @@ Shader "Custom/ObjectOutlines"
 
             TEXTURE2D(_OutlineId);
             SAMPLER(sampler_OutlineId);
+            float4 _OutlineId_TexelSize;
+
+            TEXTURE2D(_OutlineColors);
+            SAMPLER(sampler_OutlineColors);
+            
             TEXTURE2D(_CameraDepthTexture);
             SAMPLER(sampler_CameraDepthTexture);
-            float4 _OutlineId_TexelSize;
 
             v2f vert(appData i)
             {
@@ -50,30 +56,36 @@ Shader "Custom/ObjectOutlines"
                 return o;
             }
 
-            float4 GetOutline(float id, float depth, int radius, float2 uv)
+            float4 GetOutline(float id, float depth, int radius, float2 uv, out float fragDepth)
             {
+                if(radius <= 0)
+                    return 0;
+                
+                fragDepth = depth;
+                
                 [loop] //For performance reasons, the compiler tries "unroll" loops, but sometimes dynamic loops cannot be unrolled, so we need to explicitly tell the compiler to treat the loop as an actual loop
-                for (int i = 0; i < radius; i++)
+                for (int i = 1; i <= radius; i++)
                 {
-                    [loop]
-                    for (int x = -radius; x <= radius; x++)
+                    for (int x = -1; x <= 1; x++)
                     {
-                        [loop]
-                        for (int y = -radius; y <= radius; y++)
+                        for (int y = -1; y <= 1; y++)
                         {
                             if(x == 0 && y == 0)
                                 continue;
 
-                            float2 otherUV = uv + (float2(x, y) * _OutlineId_TexelSize);
+                            float2 otherUV = uv + (float2(x, y) * radius * _OutlineId_TexelSize);
                             float otherID = SAMPLE_TEXTURE2D(_OutlineId, sampler_OutlineId, otherUV).r;
 
                             if(otherID == id)
                                 continue;
 
                             float otherDepth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, sampler_CameraDepthTexture, otherUV);
-                            
+
                             if(otherDepth > depth)
-                                return id; //This should be the outline color
+                            {
+                                fragDepth = otherDepth;
+                                return SAMPLE_TEXTURE2D(_OutlineColors, sampler_OutlineColors, otherUV);
+                            }
                         }
                     }
                 }
@@ -81,12 +93,13 @@ Shader "Custom/ObjectOutlines"
                 return 0;
             }
 
-            float4 frag(v2f i) : SV_Target
+            float4 frag(v2f i, out float depth : SV_Depth) : SV_Target
             {
-                float outlineID = SAMPLE_TEXTURE2D(_OutlineId, sampler_OutlineId, i.uv).r;
-                float depth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, sampler_CameraDepthTexture, i.uv);
-                
-                return GetOutline(outlineID, depth, _OutlineRadius, i.uv);
+                float sourceID = SAMPLE_TEXTURE2D(_OutlineId, sampler_OutlineId, i.uv).r;
+                float sourceDepth = SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, sampler_CameraDepthTexture, i.uv);
+
+                float4 finalColor = GetOutline(sourceID, sourceDepth, _OutlineRadius, i.uv, depth);
+                return finalColor;
             }
 
             ENDHLSL
