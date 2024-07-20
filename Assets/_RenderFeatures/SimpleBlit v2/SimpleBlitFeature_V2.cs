@@ -20,6 +20,7 @@ public class SimpleBlitFeature_V2 : ScriptableRendererFeature
         if(renderingData.cameraData.cameraType != CameraType.Game)
             return;
         
+        _renderPass.ConfigureInput(ScriptableRenderPassInput.Color);
         renderer.EnqueuePass(_renderPass);
     }
     
@@ -31,5 +32,3 @@ public class SimpleBlitFeature_V2 : ScriptableRendererFeature
         _renderPass.SetTarget(renderer.cameraColorTargetHandle);
     }
 }
-
-
