@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5678502130979788591
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_HatchingPatch 1
+  m_Shader: {fileID: -6465566751694194690, guid: f2000b577458dea43ba85bb1c2f116d9,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AngleOffset: 10
+    - _ClusterSize: 5
+    - _DistortionNoiseScale: 100
+    - _DistortionStrength: 0.02
+    - _EdgeSize: 0.05
+    - _EdgeStrenght: 1
+    - _HatchingSmoothness: 1
+    - _HatchingWidth: 0.307
+    - _LightNoiseBlend: 0.638
+    - _LightNoiseScale: 500
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _UseLightDir: 1
+    - _WaveRotation: 15.3
+    - _WaveScale: 500
+    m_Colors:
+    - _ClusterAngleOffsets: {r: 10, g: 20, b: 30, a: 0}
+    - _ClusterSizeOffsets: {r: 0, g: 5, b: 10, a: 0}
+    - _LightSmoothness: {r: 0.2, g: 1, b: 0, a: 0}
+    - _Smoothness: {r: 0.23, g: 0.29, b: 0, a: 0}
+    - _SmoothnessRange: {r: 0, g: 0.1, b: 0, a: 0}
+    - _WaveScaleOffsets: {r: 0, g: 10, b: 20, a: 0}
+  m_BuildTextureStacks: []
