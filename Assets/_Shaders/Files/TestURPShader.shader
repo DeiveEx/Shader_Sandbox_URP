@@ -25,7 +25,7 @@ Shader "Test/TestURPShader"
 
         //Textures are special, don't need to be declared inside the CBuffer
         TEXTURE2D(_MainTex);
-        SAMPLER(sampler_MainTex); //we need to declare a sampler for each texture as well. Just put "sampler_" in front og the texture name
+        SAMPLER(sampler_MainTex); //we need to declare a sampler for each texture as well. Just put "sampler_" in front of the texture name
 
         //Here we declare the structs used to pass data between each shader (vertex, fragment, etc.)
         struct appData
@@ -46,10 +46,11 @@ Shader "Test/TestURPShader"
         Pass
         {
             HLSLPROGRAM
+            //Kust like before, here we define which methods are gonna beexecuted in the Vertex and Frament stages
             #pragma vertex vert
             #pragma fragment frag
 
-            //"i" for "input" and "o" for "output"
+            //"i" for "input" and "o" for "output" (arbitrary names)
             v2f vert(appData i)
             {
                 v2f o;
