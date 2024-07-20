@@ -13,7 +13,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - ENUM_10794EC1F7F94E48AFAB546EEFE55555_NORMALS
+  - ENUM_10794EC1F7F94E48AFAB546EEFE55555_DEPTH
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -40,7 +40,7 @@ Material:
     m_Ints: []
     m_Floats:
     - Boolean_b55ad1ca02724b29a6d08fa99f8d20a4: 0
-    - ENUM_10794EC1F7F94E48AFAB546EEFE55555: 1
+    - ENUM_10794EC1F7F94E48AFAB546EEFE55555: 0
     - Vector1_130ebe3be9af407181fd096b261a06ee: 0.002
     - _QueueControl: 0
     - _QueueOffset: 0
