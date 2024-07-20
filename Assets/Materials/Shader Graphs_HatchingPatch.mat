@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3083599155931817996
+--- !u!114 &-5678502130979788591
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_HatchingSimple
-  m_Shader: {fileID: -6465566751694194690, guid: af6aff18b08990743b13edefeeefb588,
+  m_Name: Shader Graphs_HatchingPatch
+  m_Shader: {fileID: -6465566751694194690, guid: f2000b577458dea43ba85bb1c2f116d9,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -51,18 +51,26 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AngleOffset: 17
+    - _AngleOffset: 10
     - _ClusterSize: 5
-    - _DistortionNoiseScale: 50
+    - _DistortionNoiseScale: 100
     - _DistortionStrength: 0.02
     - _EdgeSize: 0.05
     - _EdgeStrenght: 1
-    - _HatchingSmoothness: 0.079
-    - _HatchingWidth: 0.175
+    - _HatchingSmoothness: 0.39
+    - _HatchingWidth: 0.307
+    - _LightNoiseBlend: 0.5
+    - _LightNoiseScale: 50
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RotationOffset: 12.09
-    - _WaveRotation: 10
-    - _WaveScale: 100
-    m_Colors: []
+    - _UseLightDir: 0
+    - _WaveRotation: 15.3
+    - _WaveScale: 150
+    m_Colors:
+    - _ClusterAngleOffsets: {r: 10, g: 20, b: 30, a: 0}
+    - _ClusterSizeOffsets: {r: 0, g: 5, b: 10, a: 0}
+    - _LightSmoothness: {r: 0, g: 1, b: 0, a: 0}
+    - _Smoothness: {r: 0.23, g: 0.29, b: 0, a: 0}
+    - _SmoothnessRange: {r: 0, g: 0.2, b: 0, a: 0}
+    - _WaveScaleOffsets: {r: 0, g: 5, b: 10, a: 0}
   m_BuildTextureStacks: []

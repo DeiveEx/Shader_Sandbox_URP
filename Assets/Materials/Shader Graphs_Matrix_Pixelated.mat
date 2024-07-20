@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3083599155931817996
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 7
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -20,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_HatchingSimple
-  m_Shader: {fileID: -6465566751694194690, guid: af6aff18b08990743b13edefeeefb588,
+  m_Name: Shader Graphs_Matrix_Pixelated
+  m_Shader: {fileID: -6465566751694194690, guid: 553bbcfc484c35b41abc913a19619cbf,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -51,18 +38,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AngleOffset: 17
-    - _ClusterSize: 5
-    - _DistortionNoiseScale: 50
-    - _DistortionStrength: 0.02
-    - _EdgeSize: 0.05
-    - _EdgeStrenght: 1
-    - _HatchingSmoothness: 0.079
-    - _HatchingWidth: 0.175
+    - _Pixelize: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RotationOffset: 12.09
-    - _WaveRotation: 10
-    - _WaveScale: 100
+    - _Resolution: 25
+    - _Seed: 1
+    - _Speed: 1
     m_Colors: []
   m_BuildTextureStacks: []
+--- !u!114 &4378813709556924140
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
