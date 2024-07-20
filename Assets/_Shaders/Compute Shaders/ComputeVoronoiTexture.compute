@@ -1,0 +1,123 @@
+#pragma kernel ComputeVoronoiTexture
+
+struct Point
+{
+    int x, y;
+};
+
+int _CellAmount, _TextureSizeX, _TextureSizeY;
+float _Offset;
+StructuredBuffer<Point> _PointsBuffer;
+RWTexture2D<float4> _VoronoiTexture;
+
+float2 PointToFloat2(Point p)
+{
+    return float2(float(p.x), float(p.y));
+}
+
+int GetClosestCellId(float2 p, out float dist)
+{
+    float minDistance = 9999.0;
+    int closestPointIndex = -1;
+    
+    for (int i = 0; i < _CellAmount; i++)
+    {
+        float2 cellCoord = PointToFloat2(_PointsBuffer[i]);
+        float fragDistance = distance(p, cellCoord);
+        
+        if(fragDistance < minDistance)
+        {
+            minDistance = fragDistance;
+            closestPointIndex = i;
+        }
+    }
+
+    dist = minDistance;
+    
+    return closestPointIndex;
+}
+
+void voronoi( in float2 x, out float dA, out float dB, out float2 rA, out float2 rB, out float cellID)
+{
+    float2 textureSize = float2(float(_TextureSizeX), float(_TextureSizeY));
+
+    //----------------------------------
+    // first pass: regular voronoi
+    //----------------------------------
+    float minimumDistanceA = 9999.0;
+    float minimumDistanceB = 9999.0;
+    float2 minimumRelativeVectorA;
+    float2 minimumRelativeVectorB;
+
+    for(int i = 0; i < _CellAmount; i++)
+    {
+        float2 pointCoord = PointToFloat2(_PointsBuffer[i]);
+        float2 relativePos = pointCoord - x;
+        float fragDistance = distance(x, pointCoord);
+        
+        if(fragDistance < minimumDistanceA)
+        {
+            minimumDistanceB = minimumDistanceA;
+            minimumDistanceA = fragDistance;
+
+            minimumRelativeVectorA = relativePos;
+            cellID = float(i) / float(_CellAmount);
+        }
+        else if(fragDistance < minimumDistanceB)
+        {
+            minimumDistanceB = fragDistance;
+            minimumRelativeVectorB = relativePos;
+        }
+    }
+
+    dA = sqrt(minimumDistanceA);
+    dB = sqrt(minimumDistanceB);
+    rA = minimumRelativeVectorA;
+    rB = minimumRelativeVectorB;
+
+    //----------------------------------
+    // Second pass: Distance to borders
+    //----------------------------------
+    // float2 midPoint = (minimumRelativePos + minimumRelativePos2) * 0.5;
+    // float2 normalizedDirection = normalize(minimumRelativePos2 - minimumRelativePos);
+    // float projection = dot(midPoint, normalizedDirection);
+    // minimumDistance = min(minimumDistance, projection);
+    
+    // color = float3( minimumDistance, minimumRelativePos );
+
+    
+}
+
+inline float2 unity_voronoi_noise_randomVector (float2 UV, float offset) //This function was taken from Unity's Voronoi node documentation, and not from ShaderToy
+{
+    float2x2 m = float2x2(15.27, 47.63, 99.41, 89.98);
+    UV = frac(sin(mul(UV, m)) * 46839.32);
+    return float2(sin(UV.y*offset)*0.5+0.5, cos(UV.x*offset)*0.5+0.5);
+}
+
+[numthreads(1, 1, 1)]
+void ComputeVoronoiTexture(uint3 id : SV_DispatchThreadID)
+{
+    float4 color = float4(0, 0, 0, 1);
+
+    float dA, dB;
+    float2 rA, rB;
+    float cellId;
+    
+    voronoi(id.xy, dA, dB, rA, rB, cellId);
+    
+    if(dA < 0.5)
+    {
+        color = float4(1, 0, 0, 1);
+    }
+    else
+    {
+        color = float4(cellId, cellId, cellId, 1);
+        
+        // float d = dot(0.5 * (rA + rB), normalize(rB - rA)) / float(_TextureSizeX);
+        // float border = 1 - smoothstep(0, 0.05, d);
+        // color = float4(border, border, border, 1);
+    }
+    
+    _VoronoiTexture[id.xy] = color;
+}
