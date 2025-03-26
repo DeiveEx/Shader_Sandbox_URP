@@ -1,0 +1,80 @@
+#pragma kernel Setup
+#pragma kernel JFA
+#pragma kernel Outline
+
+Texture2D _SeedTexture;
+SamplerState sampler_SeedTexture; //Unity will auto-initialize this sampler with the Texture info
+RWTexture2D<float4> _Source;
+RWTexture2D<float4> _Result;
+int _TextureSizeX, _TextureSizeY, _Step;
+float _Radius;
+
+float2 GetUV(uint3 id)
+{
+    return float2(float(id.x) / float(_TextureSizeX), float(id.y) / float(_TextureSizeY));
+}
+
+[numthreads(8,8,1)]
+void Setup(uint3 id : SV_DispatchThreadID)
+{
+    //We want to create an SDF texture using the seed texture as the source, so for that we need to encode the seed
+    //coordinates into the result texture
+    float2 uv = GetUV(id);
+    float4 seed = _SeedTexture.SampleLevel(sampler_SeedTexture, uv, 0);
+
+    _Source[id.xy] = seed.r > 0 ? float4(uv, 0, 1) : float4(0, 0, 0, 1);
+}
+
+[numthreads(8,8,1)]
+void JFA(uint3 id : SV_DispatchThreadID) //JFA = Jump Flooding Algorithm
+{
+    float2 center = GetUV(id);
+    float shortestDistance = 99999.0;
+    float2 shortestCoord = float2(0, 0);
+    int stepWidth = _Step;
+
+    //Find the closest valid coordinate from the source texture
+    for (int x = -1; x <= 1; x++)
+    {
+        for (int y = -1; y <= 1; y++)
+        {
+            //Read the coordinate that's written into the buffer (source texture)
+            uint3 offsetId = id + uint3(x * stepWidth, y * stepWidth, 0);
+            float2 offsetPosition = _Source.Load(offsetId).xy;
+
+            float distance = length(offsetPosition - center);
+
+            //We only store positions that are not (0, 0). In this case, we can just check one of the axis instead of both
+            if (offsetPosition.x > 0 && distance < shortestDistance)
+            {
+                shortestDistance = distance;
+                shortestCoord = offsetPosition;
+            }
+        }
+    }
+
+    //Save the shortest distance into the buffer texture (result texture)
+    _Result[id.xy] = float4(shortestCoord, 0, 1);
+}
+
+
+
+[numthreads(8,8,1)]
+void Outline(uint3 id : SV_DispatchThreadID)
+{
+    float2 uv = GetUV(id);
+    float2 storedPosition = _Source.Load(id).xy;
+    float distance = length(storedPosition - uv);
+
+    float4 color = _SeedTexture.Load(id);
+
+    if (color.r > 0)
+        _Result[id.xy] = color;
+    else if (storedPosition.r > 0)
+    {
+        float value = step(distance, _Radius);
+        _Result[id.xy] = float4(value, 0, 0, 1);
+    }
+    else
+        _Result[id.xy] = float4(0, 0, 0, 1);
+}

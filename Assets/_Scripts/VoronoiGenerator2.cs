@@ -81,7 +81,7 @@ public class VoronoiGenerator2 : MonoBehaviour
         _generatorShader.SetInt("_TextureSizeX", _textureSize.x);
         _generatorShader.SetInt("_TextureSizeY", _textureSize.y);
         
-        _renderer.material.SetTexture("_MainTex", _rt);
+        _renderer.material.mainTexture = _rt;
 
         Debug.Log($"Size of {typeof(int)}: {sizeof(int)}");
         Debug.Log($"Size of {nameof(PointBufferEntry)}: {Marshal.SizeOf(typeof(PointBufferEntry))}");
