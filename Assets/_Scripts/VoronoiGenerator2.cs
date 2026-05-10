@@ -58,7 +58,7 @@ public class VoronoiGenerator2 : MonoBehaviour
 
     private void Setup()
     {
-        //get some info about the compute shader
+        //get some info about the compute shader so we don't have to mirror it here (like the thread group size)
         _kernelIndex = _generatorShader.FindKernel("ComputeVoronoiTexture");
         _generatorShader.GetKernelThreadGroupSizes(_kernelIndex, out var sizeX, out var sizeY, out var sizeZ);
         _threadGroupSizes = new()
