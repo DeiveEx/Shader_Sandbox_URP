@@ -4,7 +4,8 @@ Shader "Custom/CustomShadows_2"
     {
         [MainColor] _BaseColor("Base Color", Color) = (1, 1, 1, 1)
         [MainTexture] _BaseMap("Base Map", 2D) = "white" {}
-        _ShadowSteps("Shadow Steps", Float) = 1
+        [Toggle] _UseStep("UseStep", Float) = 1
+        _Step("Step", Range(0.0, 1.0)) = 1
     }
 
     SubShader
@@ -53,7 +54,8 @@ Shader "Custom/CustomShadows_2"
             CBUFFER_START(UnityPerMaterial)
                 half4 _BaseColor;
                 float4 _BaseMap_ST;
-                float _ShadowSteps;
+                float _UseStep;
+                float _Step;
             CBUFFER_END
 
             float CalculateShading(float3 normalWS, float3 lightDirection)
@@ -124,10 +126,12 @@ Shader "Custom/CustomShadows_2"
                 float3 lightColor = CalculateLighting(normal, IN.positionWS, IN.positionHCS);
 
                 half4 color = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, IN.uv) * _BaseColor;
-                color.rgb *= lightColor;
-                // color.rgb *= lightColor * step(0.5, Luminance(lightColor));
-                // color.rgb *= step(0.5, Luminance(lightColor));
-                // color.rgb *= step(0.5, lightColor);
+                
+                if (_UseStep)
+                    color.rgb *= step(_Step, lightColor);
+                else
+                    color.rgb *= lightColor;
+                
                 return color;
             }
             ENDHLSL
